@@ -1,5 +1,3 @@
-/** @module mobile/User */
-
 const Base = require("../Base");
 const error = require("../error");
 const SearchFilter = require("../enum/SearchFilter");

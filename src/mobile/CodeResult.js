@@ -1,5 +1,3 @@
-/** @module mobile/CodeResult */
-
 const Base = require("../Base");
 
 /**

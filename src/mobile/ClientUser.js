@@ -1,5 +1,3 @@
-/** @module mobile/ClientUser */
-
 const User = require("./User");
 const PostBackground = require("./PostBackground");
 const CodeResult = require("./CodeResult");

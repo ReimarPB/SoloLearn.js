@@ -1,5 +1,3 @@
-/** @module mobile/Lesson */
-
 const Base = require("../Base");
 
 /**

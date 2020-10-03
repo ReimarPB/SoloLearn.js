@@ -1,5 +1,3 @@
-/** @module mobile/Player */
-
 const User = require("./User");
 
 /**

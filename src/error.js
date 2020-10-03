@@ -1,5 +1,3 @@
-/** @module error */
-
 /**
  * A shortcut function that throws an error
  * @ignore

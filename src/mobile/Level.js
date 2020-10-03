@@ -1,5 +1,3 @@
-/** @module mobile/Level */
-
 const Base = require("../Base");
 
 /**

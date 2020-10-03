@@ -1,5 +1,3 @@
-/** @module mobile/ItemCounts */
-
 const Base = require("../Base");
 
 /**

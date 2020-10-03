@@ -1,5 +1,3 @@
-/** @module mobile/Streak */
-
 const Base = require("../Base");
 
 /**

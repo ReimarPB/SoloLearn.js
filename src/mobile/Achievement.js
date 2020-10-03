@@ -1,5 +1,3 @@
-/** @module mobile/Achievement */
-
 const Base = require("../Base");
 
 /**

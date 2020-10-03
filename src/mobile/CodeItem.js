@@ -1,5 +1,3 @@
-/** @module mobile/CodeItem */
-
 const Base = require("../Base");
 const error = require("../error");
 

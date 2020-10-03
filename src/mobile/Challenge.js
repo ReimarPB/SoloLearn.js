@@ -1,5 +1,3 @@
-/** @module mobile/Challenge */
-
 const Base = require("../Base");
 
 /**

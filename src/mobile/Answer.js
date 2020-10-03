@@ -1,5 +1,3 @@
-/** @module mobile/Answer */
-
 const Base = require("../Base");
 
 /**

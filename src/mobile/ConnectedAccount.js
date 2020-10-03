@@ -1,5 +1,3 @@
-/** @module mobile/ConnectedAccount */
-
 const Base = require("../Base");
 
 /**

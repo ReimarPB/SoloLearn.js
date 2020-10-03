@@ -1,5 +1,3 @@
-/** @module mobile/Notification */
-
 const Base = require("../Base");
 const error = require("../error");
 

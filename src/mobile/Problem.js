@@ -1,5 +1,3 @@
-/** @module mobile/Problem */
-
 const Base = require("../Base");
 
 /**

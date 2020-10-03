@@ -1,5 +1,3 @@
-/** @module Base */
-
 /**
  * Represents any class returned by a response
  * @private

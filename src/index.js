@@ -1,5 +1,3 @@
-/** @module index */
-
 const SoloLearn = {
 
 	Base: require("./Base"),

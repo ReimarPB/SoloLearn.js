@@ -1,5 +1,3 @@
-/** @module mobile/Code */
-
 const Base = require("../Base");
 const error = require("../error");
 
