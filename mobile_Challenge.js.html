@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Challenge.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,120 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Challenge.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Challenge */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents a challenge / a question in a contest
+ */
+class Challenge extends Base {
 
-    
+	#contestId;
 
-    
+	constructor(client, data, contestId) {
+		super(...arguments);
 
-    
+		const Answer = require("./Answer");
 
-     
+		/**
+		 * The possible answers for this challenge
+		 * @type {Answer[]}
+		 */
+		this.answers = data.answers.map(answer => new Answer(client, answer));
 
-    
+		/**
+		 * The ID of the course currently being used
+		 * @type {number}
+		 */
+		this.courseID = data.courseID;
 
-    
+		/**
+		 * The date the question was created
+		 * @type {string}
+		 */
+		this.date = data.date;
 
-    
+		/**
+		 * The ID of the challenge
+		 * @type {number}
+		 */
+		this.id = data.id;
 
-    
+		/**
+		 * Unknown value - question author's level?
+		 * @type {number}
+		 */
+		this.level = data.level;
 
-    
-</article>
+		/**
+		 * Unknown value
+		 * @type {?*}
+		 */
+		this.levelDetails = data.levelDetails;
 
-</section>
+		/**
+		 * Unknown value
+		 * @type {string}
+		 */
+		this.name = data.name;
+
+		/**
+		 * Whether the challenge is published or not
+		 * @type {boolean}
+		 */
+		this.published = data.published;
+
+		/**
+		 * The challenge's question
+		 * @type {string}
+		 */
+		this.question = data.question;
+
+		/**
+		 * The challenge's approval status
+		 * @type {ChallengeStatus}
+		 */
+		this.status = data.status;
+
+		/**
+		 * The ID of the contest the answer belongs to
+		 * @type {number}
+		 * @private
+		 */
+		this.#contestId = contestId;
+
+	}
+
+	/**
+	 * Submit an answer to this challenge
+	 * @param {boolean} isCorrect - Whether the answer was correct or not
+	 * @returns Promise&lt;AnswerResult>
+	 */
+	async answer(isCorrect) {
+
+		const AnswerResult = require("./AnswerResult");
+
+		const response = await this.client.requestV1("/Challenge/PushContestResult", { challengeId: this.id, contestId: this.#contestId, isCompleted: isCorrect });
+		return new AnswerResult(this.client, response);
+
+	}
+
+}
+
+module.exports = Challenge;</code></pre>
+        </article>
+    </section>
 
 
 

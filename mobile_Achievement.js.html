@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Achievement.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,85 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Achievement.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Achievement */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents an achievement/badge
+ */
+class Achievement extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * The achievement color in the form of a hex code, used as a replacement of the grey color in the icon when unlocked
+		 * @type {string}
+		 */
+		this.color = data.color;
 
-    
+		/**
+		 * The achievement description
+		 * @type {string}
+		 */
+		this.description = data.description;
 
-     
+		/**
+		 * The URL to the achievement icon in grey (300 x 300)
+		 * @type {string}
+		 */
+		this.icon = data.icon;
 
-    
+		/**
+		 * The achievement ID
+		 * @type {number}
+		 */
+		this.id = data.id;
 
-    
+		/**
+		 * Whether or not the user has unlocked the achievement
+		 * @type {boolean}
+		 */
+		this.isUnlocked = data.isUnlocked;
 
-    
+		/**
+		 * Unknown value
+		 * @type {number}
+		 */
+		this.points = data.points;
 
-    
+		/**
+		 * The title of the achievement
+		 * @type {string}
+		 */
+		this.title = data.title;
 
-    
-</article>
+		/**
+		 * The achievement type
+		 */
+		this.type = data.type;
 
-</section>
+
+		this.unlockDate = data.unlockDate;
+
+	}
+
+}
+
+module.exports = Achievement;</code></pre>
+        </article>
+    </section>
 
 
 

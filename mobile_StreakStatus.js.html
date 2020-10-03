@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/StreakStatus.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,65 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/StreakStatus.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/StreakStatus */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents the streak notification that shows up when you open SoloLearn
+ */
+class StreakStatus extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * The notification message ("You are on a {X} day streak! Come back tomorrow for more.")
+		 * @type {string}
+		 */
+		this.message = data.message;
 
-    
+		/**
+		 * Your current streak
+		 * @type {number}
+		 */
+		this.streak = data.streak;
 
-     
+		/**
+		 * Unknown value - always 7?
+		 * @type {number}
+		 */
+		this.maxStreak = data.maxStreak;
 
-    
+		/**
+		 * The notification title ("Daily Bonus! +{X}XP")
+		 * @type {string}
+		 */
+		this.title = data.title;
 
-    
+		/**
+		 * The amount of XP you got (usually 5)
+		 * @type {number}
+		 */
+		this.xp = data.xp;
 
-    
+	}
 
-    
+}
 
-    
-</article>
-
-</section>
+module.exports = StreakStatus;</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>enum/ContestStatus.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,37 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">enum/ContestStatus.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Enum for the statuses a contest (player) can have
+ * @enum {number}
+ * @readonly
+ * @see Player
+ */
+const ContestStatus = {
+	NONE: 0,
+	WON: 1,
+	LOST: 2,
+	INVITED: 3,
+	STARTED: 4,
+	WAITING: 5,
+	DECLINED: 6,
+	EXPIRED: 7,
+	DRAW: 8
+};
 
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+module.exports = ContestStatus;</code></pre>
+        </article>
+    </section>
 
 
 

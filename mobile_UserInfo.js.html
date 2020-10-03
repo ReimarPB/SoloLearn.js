@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/UserInfo.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,100 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/UserInfo.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/UserInfo */
 
-<article>
-    <div class="container-overview">
-    
-        
+const User = require("./User");
 
-        
-    
-    </div>
+/**
+ * Returned by getUserInfo(), contains some other information than User
+ * @class
+ * @public
+ */
+class UserInfo extends User {
 
-    
+	constructor(client, data) {
 
-    
+		super(...arguments);
 
-    
+		const ConnectedAccount = require("./ConnectedAccount");
 
-     
+		/**
+		 * The link to the user's profile picture if they have any
+		 * @type {?string}
+		 */
+		this.avatarUrl = data.avatarUrl;
 
-    
+		/**
+		 * The user's profile summary if set
+		 * @type {?string}
+		 */
+		this.bio = data.bio;
 
-    
+		/**
+		 * The user's city if set
+		 * @type {?string}
+		 */
+		this.city = data.city;
 
-    
+		/**
+		 * The third-party accounts this user has connected their profile to (StackOverflow, GitHub etc.)
+		 * @type {ConnectedAccount[]}
+		 */
+		this.connectedAccounts = data.connectedAccounts.map(account => new ConnectedAccount(account));
 
-    
+		/**
+		 * The user's country code if set (e.g. "us")
+		 * @type {?string}
+		 */
+		this.country = data.country;
 
-    
-</article>
+		/**
+		 * The user's first name if set
+		 * @type {?string}
+		 */
+		this.firstName = data.firstName;
 
-</section>
+		/**
+		 * The user's last name if set
+		 * @type {?string}
+		 */
+		this.lastName = data.lastName;
+
+		/**
+		 * The user's username
+		 * @type {string}
+		 */
+		this.nickname = data.nickname;
+
+		/**
+		 * The user's state if set
+		 * @type {?string}
+		 */
+		this.state = data.state;
+
+		/**
+		 * The user's ID
+		 * @type {number}
+		 */
+		this.userId = data.userId;
+
+	}
+
+}
+
+module.exports = UserInfo;</code></pre>
+        </article>
+    </section>
 
 
 

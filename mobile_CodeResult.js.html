@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/CodeResult.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,89 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/CodeResult.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/CodeResult */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents the result that is returned after running a code
+ */
+class CodeResult extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * The date the code was executed
+		 * @type {string}
+		 */
+		this.date = data.date;
 
-    
+		/**
+		 * The error code. Seems to only be 0 when no error and 2 when there is an error
+		 * @type {number}
+		 */
+		this.errorCode = data.errorCode;
 
-     
+		/**
+		 * The ID of this result. (Not the ID of the code itself)
+		 * @type {number}
+		 */
+		this.id = data.id;
 
-    
+		/**
+		 * The input that was used when running the code
+		 * @type {?string}
+		 */
+		this.input = data.input;
 
-    
+		/**
+		 * The programming language this code was written in
+		 * @type {Language}
+		 */
+		this.language = data.language;
 
-    
+		/**
+		 * The output of this code, null if this is a web code
+		 * @type {?string}
+		 */
+		this.output = data.output;
 
-    
+		/**
+		 * The source code that was used
+		 * @type {string}
+		 */
+		this.sourceCode = data.sourceCode;
 
-    
-</article>
+		/**
+		 * The status code. Seems to always be 2 (?)
+		 * @type {number}
+		 */
+		this.status = data.status;
 
-</section>
+		/**
+		 * The user ID of the user who ran the code
+		 * @type {number}
+		 */
+		this.userID = data.userID;
+
+	}
+
+}
+
+module.exports = CodeResult;</code></pre>
+        </article>
+    </section>
 
 
 

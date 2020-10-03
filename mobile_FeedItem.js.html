@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/FeedItem.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,115 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/FeedItem.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Post */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents an item that can be shown in the feed
+ */
+class FeedItem extends Base {
 
-    
+	constructor(client, data) {
 
-    
+		const User     = require("./User");
+		const UserPost = require("./Post");
 
-    
+		if (data.user)     data.user     = new User(client, data.user);
+		if (data.userPost) data.userPost = new UserPost(client, data.userPost);
 
-     
+		super(...arguments);
 
-    
+		/**
+		 * The date this post was created
+		 * @type {string}
+		 */
+		this.date = data.date;
 
-    
+		/**
+		 * The post ID
+		 * @type {number}
+		 */
+		this.id = data.id;
 
-    
+		/**
+		 * The level of the post author
+		 * @type {number}
+		 */
+		this.level = data.level;
 
-    
+		/**
+		 * Unknown value - always empty string?
+		 * @type {string}
+		 */
+		this.message = data.message;
 
-    
-</article>
+		/**
+		 * Unknown value - always null?
+		 * @type {?*}
+		 */
+		this.packageName = data.packageName;
 
-</section>
+		/**
+		 * Unknown value - always null?
+		 * @type {?*}
+		 */
+		this.referenceID = data.referenceID;
+
+		/**
+		 * Text shown next to username (e.g. "reached Level 21")
+		 * @type {string}
+		 */
+		this.title = data.title;
+
+		/**
+		 * The post type
+		 * @type {PostType}
+		 */
+		this.type = data.type
+
+		/**
+		 * The author of the post or the user in question
+		 * @type {User}
+		 */
+		this.user = data.user;
+
+		/**
+		 * The ID of the post author / user in question
+		 * @type {number}
+		 */
+		this.userID = data.userID;
+
+		/**
+		 * Unknown value
+		 * @type {?*}
+		 */
+		this.userLesson = data.userLesson;
+
+		/**
+		 * The post the user wrote if applicable (type == PostType.USER_POST)
+		 * @type {?UserPost}
+		 */
+		this.userPost = data.userPost || null;
+
+	}
+
+
+}
+
+module.exports = FeedItem;</code></pre>
+        </article>
+    </section>
 
 
 

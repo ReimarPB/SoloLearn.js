@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/ItemCounts.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,83 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/ItemCounts.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/ItemCounts */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Tells how many codes, answers etc. a user has
+ */
+class ItemCounts extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * How many answers the user has written
+		 * @type {number}
+		 */
+		this.answers = data.answers;
 
-    
+		/**
+		 * How many codes the user has published
+		 * @type {number}
+		 */
+		this.codes = data.codes;
 
-     
+		/**
+		 * How many comments the user has written
+		 * @type {number}
+		 */
+		this.comments = data.comments;
 
-    
+		/**
+		 * How many courses the user has started
+		 * @type {number}
+		 */
+		this.courses = data.courses;
 
-    
+		/**
+		 * How many lessons the user has published
+		 * @type {number}
+		 */
+		this.lessons = data.lessons;
 
-    
+		/**
+		 * How many posts the user has written
+		 * @type {number}
+		 */
+		this.posts = data.posts;
 
-    
+		/**
+		 * How many questions the user has asked
+		 * @type {number}
+		 */
+		this.questions = data.questions;
 
-    
-</article>
+		/**
+		 * How many solutions the user has created for Code Coach
+		 * @type {number}
+		 */
+		this.solutions = data.solutions;
 
-</section>
+	}
+
+}
+
+module.exports = ItemCounts;</code></pre>
+        </article>
+    </section>
 
 
 

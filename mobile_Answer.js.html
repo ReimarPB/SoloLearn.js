@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Answer.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,66 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Answer.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Answer */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents an answer to a challenge
+ * @see Challenge
+ */
+class Answer extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * Unknown value - always 0?
+		 * @type {number}
+		 */
+		this.answerLength = data.answerLength;
 
-    
+		/**
+		 * The ID of the answer
+		 * @type {number}
+		 */
+		this.id = data.id;
 
-     
+		/**
+		 * Whether or not this is the correct answer
+		 * @type {boolean}
+		 */
+		this.isCorrect = data.isCorrect;
 
-    
+		/**
+		 * Answer properties
+		 * @type {object}
+		 */
+		this.properties = data.properties;
 
-    
+		/**
+		 * The answer text
+		 * @type {string}
+		 */
+		this.text = data.text;
 
-    
+	}
 
-    
+}
 
-    
-</article>
-
-</section>
+module.exports = Answer;</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/ConnectedAccount.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,72 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/ConnectedAccount.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/ConnectedAccount */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents a third-party account a user has connected to (e.g. StackOverflow)
+ */
+class ConnectedAccount extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * Unique ID of this connected account (not the same as the user ID or the third-party account ID)
+		 * @type {number}
+		 */
+		this.connectionId = data.connectionId;
 
-    
+		/**
+		 * Whether or not this is visible
+		 * @type {boolean}
+		 */
+		this.isVisible = data.isVisible;
 
-     
+		/**
+		 * The username of the third-party account
+		 * @type {string}
+		 */
+		this.name = data.name;
 
-    
+		/**
+		 * The link to the user's account
+		 * @type {string}
+		 */
+		this.profileUrl = data.profileUrl;
 
-    
+		/**
+		 * The third-party service connected to
+		 * @type {AccountService}
+		 */
+		this.service = data.service;
 
-    
+		/**
+		 * The last time the user synchronized their account
+		 * @type {string}
+		 */
+		this.syncDate = data.syncDate;
 
-    
 
-    
-</article>
+	}
 
-</section>
+}
+
+module.exports = ConnectedAccount;</code></pre>
+        </article>
+    </section>
 
 
 

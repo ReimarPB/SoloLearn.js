@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Dashboard.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,73 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Dashboard.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Dashboard */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents the user's dashboard
+ */
+class Dashboard extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		const Streak = require("./Streak");
 
-    
+		/**
+		 * The user's position in latitude
+		 * @type {number}
+		 */
+		this.latitude = data.latitude;
 
-     
+		/**
+		 * The user's position in longitude
+		 * @type {number}
+		 */
+		this.longitude = data.longitude;
 
-    
+		/**
+		 * The amount of nearby learners
+		 * @type {number}
+		 */
+		this.nearbyLearners = data.nearbyLearners;
 
-    
+		/**
+		 * The user's position on the leaderboard (0 if not applicable)
+		 * @type {number}
+		 */
+		this.position = data.position;
 
-    
+		/**
+		 * The user's streak info
+		 * @type {Streak}
+		 */
+		this.streak = new Streak(client, data.streak);
 
-    
+		/**
+		 * How many visits the user has had last week
+		 * @type {number}
+		 */
+		this.visits = data.visits;
 
-    
-</article>
+	}
 
-</section>
+}
+
+module.exports = Dashboard;</code></pre>
+        </article>
+    </section>
 
 
 

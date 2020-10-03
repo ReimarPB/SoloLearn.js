@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Player.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,77 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Player.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Player */
 
-<article>
-    <div class="container-overview">
-    
-        
+const User = require("./User");
 
-        
-    
-    </div>
+/**
+ * Represents a user participating in a contest
+ */
+class Player extends User {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * Unknown value - always null?
+		 * @type {?*}
+		 */
+		this.activeChallengeID = data.activeChallengeID;
 
-    
+		/**
+		 * Unknown value - always null?
+		 * @type {?*}
+		 */
+		this.alternateName = data.alternateName;
 
-     
+		/**
+		 * Unknown value - always 0?
+		 * @type {number}
+		 */
+		this.result = data.result;
 
-    
+		/**
+		 * Unknown value - always empty array?
+		 * @type {*}
+		 */
+		this.results = data.results;
 
-    
+		/**
+		 * Unknown value
+		 * @type {number}
+		 */
+		this.rewardXp = data.rewardXp;
 
-    
+		/**
+		 * The player's current score (amount of right answers)
+		 * @type {number}
+		 */
+		this.score = data.score;
 
-    
+		/**
+		 * The player's current status in this contest
+		 * @type {ContestStatus}
+		 */
+		this.status = data.status;
 
-    
-</article>
+	}
 
-</section>
+}
+
+module.exports = Player;</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Streak.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,54 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Streak.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Streak */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Information about a user's daily login streak
+ */
+class Streak extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * The user's current streak
+		 * @type {number}
+		 */
+		this.streak = data.streak;
 
-    
+		/**
+		 * The user's highest streak
+		 * @type {number}
+		 */
+		this.streakMax = data.streakMax;
 
-     
+		/**
+		 * Unknown value - always same as streak?
+		 * @type {number}
+		 */
+		this.totalStreak = data.totalStreak;
 
-    
+	}
 
-    
 
-    
+}
 
-    
-
-    
-</article>
-
-</section>
+module.exports = Streak;</code></pre>
+        </article>
+    </section>
 
 
 

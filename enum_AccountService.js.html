@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>enum/AccountService.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,33 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">enum/AccountService.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Represents a service you can connect your SoloLearn account to
+ * @enum {string}
+ * @readonly
+ */
+const AccountService = {
+	FACEBOOK: "Facebook",
+	FREE_CODE_CAMP: "FreeCodeCamp",
+	GITHUB: "GitHub",
+	GOOGLE: "Google",
+	LINKED_IN: "LinkedIn",
+	STACK_OVERFLOW: "StackOverflow"
+};
 
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+module.exports = AccountService;</code></pre>
+        </article>
+    </section>
 
 
 

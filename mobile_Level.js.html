@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Base - Documentation</title>
+    <title>mobile/Level.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,51 +29,53 @@
 
 <div id="main">
     
-    <h1 class="page-title">Base</h1>
+    <h1 class="page-title">mobile/Level.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module mobile/Level */
 
-<article>
-    <div class="container-overview">
-    
-        
+const Base = require("../Base");
 
-        
-    
-    </div>
+/**
+ * Represents a SoloLearn level
+ */
+class Level extends Base {
 
-    
+	constructor(client, data) {
+		super(...arguments);
 
-    
+		/**
+		 * The amount of XP required to level up
+		 * @type {number}
+		 */
+		this.maxXp = data.maxXp;
 
-    
+		/**
+		 * The level number
+		 * @type {number}
+		 */
+		this.number = data.number;
 
-     
+		/**
+		 * The badge you get for achieving this level or (null | Badge.NONE) if you don't get anything
+		 * @type {?Badge}
+		 */
+		this.status = data.status;
 
-    
+	}
 
-    
+}
 
-    
-
-    
-
-    
-</article>
-
-</section>
+module.exports = Level;</code></pre>
+        </article>
+    </section>
 
 
 
