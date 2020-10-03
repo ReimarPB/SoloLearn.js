@@ -9,7 +9,7 @@ const error = require("../error");
  * Represents the user that is currently logged in
  * @extends User
  */
-module.exports = class ClientUser extends User {
+class ClientUser extends User {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -72,7 +72,7 @@ module.exports = class ClientUser extends User {
 	 */
 	async searchCodes(count, filter, index = 0, searchQuery = "", language = "") {
 
-		const CodeItem = require("./CodeItem").default;
+		const CodeItem = require("./CodeItem");
 
 		const response = await this.client.requestV2("GET", `/v2/trends/projects/search?query=${searchQuery}&filter=${filter}&language=${language}&index=${index}&count=${count}&profileId=${this.client.user.id}`).catch(error);
 		return response.map(code => new CodeItem(this.client, code));
@@ -255,3 +255,5 @@ module.exports = class ClientUser extends User {
 	}
 
 }
+
+module.exports = ClientUser;

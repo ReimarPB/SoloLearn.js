@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents an item that can be shown in the feed
  */
-module.exports = class FeedItem extends Base {
+class FeedItem extends Base {
 
 	constructor(client, data) {
 
@@ -93,3 +93,5 @@ module.exports = class FeedItem extends Base {
 
 
 }
+
+module.exports = FeedItem;

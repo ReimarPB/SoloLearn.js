@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents the result that is returned after running a code
  */
-module.exports = class CodeResult extends Base {
+class CodeResult extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -67,3 +67,5 @@ module.exports = class CodeResult extends Base {
 	}
 
 }
+
+module.exports = CodeResult;

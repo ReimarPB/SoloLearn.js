@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Tells how many codes, answers etc. a user has
  */
-module.exports = class ItemCounts extends Base {
+class ItemCounts extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -61,3 +61,5 @@ module.exports = class ItemCounts extends Base {
 	}
 
 }
+
+module.exports = ItemCounts;

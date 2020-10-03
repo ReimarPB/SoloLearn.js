@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents a post created by a user
  */
-module.exports = class Post extends Base {
+class Post extends Base {
 
 	constructor(client, data) {
 
@@ -172,3 +172,5 @@ module.exports = class Post extends Base {
 	}
 
 }
+
+module.exports = Post;

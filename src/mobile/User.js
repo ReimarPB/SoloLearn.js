@@ -7,7 +7,7 @@ const SearchFilter = require("../enum/SearchFilter");
 /**
  * Represents any user on SoloLearn
  */
-module.exports = class User extends Base {
+class User extends Base {
 
 	constructor(client, data) {
 
@@ -128,7 +128,7 @@ module.exports = class User extends Base {
 	 */
 	async getCodes(count, filter = SearchFilter.MOST_RECENT, index = 0, searchQuery = "", language = "") {
 
-		const CodeItem = require("./CodeItem").default;
+		const CodeItem = require("./CodeItem");
 
 		const response = await this.client.requestV1(`/Playground/GetPublicCodes`, { count, index, language, profileId: this.id, query: searchQuery, orderBy: filter }).catch(error);
 		const arr = [];
@@ -180,7 +180,7 @@ module.exports = class User extends Base {
 	 */
 	async getUserInfo() {
 
-		const UserInfo = require("./UserInfo").default;
+		const UserInfo = require("./UserInfo");
 
 		const response = await this.client.requestV2("GET", `/v2/userinfo/?userId=${this.id}`).catch(error);
 		return new UserInfo(this.client, response);
@@ -202,3 +202,5 @@ module.exports = class User extends Base {
 	}
 
 }
+
+module.exports = User;

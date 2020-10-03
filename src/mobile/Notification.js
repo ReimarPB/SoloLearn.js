@@ -3,7 +3,7 @@
 const Base = require("../Base");
 const error = require("../error");
 
-module.exports = class Notification extends Base {
+class Notification extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -91,3 +91,5 @@ module.exports = class Notification extends Base {
 	}
 
 }
+
+module.exports = Notification;

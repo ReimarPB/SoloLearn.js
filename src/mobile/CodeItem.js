@@ -6,7 +6,7 @@ const error = require("../error");
 /**
  * Represents a code as shown in a feed
  */ 
-module.exports = class CodeItem extends Base {
+class CodeItem extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -103,7 +103,7 @@ module.exports = class CodeItem extends Base {
 	 */
 	async getCode() {
 
-		const Code = require("./Code").default;
+		const Code = require("./Code");
 
 		const response = await this.client.requestV1("/Playground/GetCode", { publicId: this.publicId }).catch(error);
 		resolve(new Code(this.client, response.code));
@@ -111,3 +111,5 @@ module.exports = class CodeItem extends Base {
 	}
 
 }
+
+module.exports = CodeItem;

@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents an achievement/badge
  */
-module.exports = class Achievement extends Base {
+class Achievement extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -63,3 +63,5 @@ module.exports = class Achievement extends Base {
 	}
 
 }
+
+module.exports = Achievement;

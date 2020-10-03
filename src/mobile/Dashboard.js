@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents the user's dashboard
  */
-module.exports = class Dashboard extends Base {
+class Dashboard extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -51,3 +51,5 @@ module.exports = class Dashboard extends Base {
 	}
 
 }
+
+module.exports = Dashboard;

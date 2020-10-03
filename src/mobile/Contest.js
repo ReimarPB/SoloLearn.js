@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents a challenge between two people with five questions
  */
-module.exports = class Contest extends Base {
+class Contest extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -82,3 +82,5 @@ module.exports = class Contest extends Base {
 	}
 
 }
+
+module.exports = Contest;

@@ -7,7 +7,7 @@ const zlib = require("zlib");
 /**
  * Represents the SoloLearn client
  */
-module.exports = class Client {
+class Client {
 
 	/**
 	 * @param {{ appVersion: ?string, firmware: ?string, locale: ?string, model: ?string, uniqueID: ?string, serial: ?string, manufacturer: ?string }} data
@@ -349,3 +349,5 @@ module.exports = class Client {
 	}
 
 }
+
+module.exports = Client;

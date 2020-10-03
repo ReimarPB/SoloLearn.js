@@ -5,10 +5,10 @@
  * @private
  */
 
-module.exports = class Base {
+class Base {
 
 	#client;
-		
+
 	constructor(client, data) {
 
 		this.#client = client;
@@ -21,3 +21,5 @@ module.exports = class Base {
 	}
 
 }
+
+module.exports = Base;

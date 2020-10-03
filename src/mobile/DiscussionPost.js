@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents a Q&A discussions post
  */
-module.exports = class DiscussionPost extends Base {
+class DiscussionPost extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -61,3 +61,5 @@ module.exports = class DiscussionPost extends Base {
 	}
 
 }
+
+module.exports = DiscussionPost;

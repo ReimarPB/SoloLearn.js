@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents a challenge / a question in a contest
  */
-module.exports = class Challenge extends Base {
+class Challenge extends Base {
 
 	#contestId;
 
@@ -98,3 +98,5 @@ module.exports = class Challenge extends Base {
 	}
 
 }
+
+module.exports = Challenge;

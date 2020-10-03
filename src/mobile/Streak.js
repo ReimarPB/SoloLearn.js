@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Information about a user's daily login streak
  */
-module.exports = class Streak extends Base {
+class Streak extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -32,3 +32,5 @@ module.exports = class Streak extends Base {
 
 
 }
+
+module.exports = Streak;

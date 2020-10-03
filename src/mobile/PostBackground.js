@@ -3,7 +3,7 @@ const Base = require("../Base");
 /**
  * Represents one of the backgrounds you can use when writing a post
  */
-module.exports = class PostBackground extends Base {
+class PostBackground extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -59,3 +59,5 @@ module.exports = class PostBackground extends Base {
 	}
 
 }
+
+module.exports = PostBackground;

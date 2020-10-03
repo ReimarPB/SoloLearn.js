@@ -5,7 +5,7 @@ const User = require("./User");
 /**
  * Represents a user participating in a contest
  */
-module.exports = class Player extends User {
+class Player extends User {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -55,3 +55,5 @@ module.exports = class Player extends User {
 	}
 
 }
+
+module.exports = Player;

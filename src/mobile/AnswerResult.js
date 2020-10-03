@@ -6,7 +6,7 @@ const Base = require("../Base");
  * Represents the result to an answer to a challenge
  * @see Answer
  */
-module.exports = class AnswerResult extends Base {
+class AnswerResult extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -38,3 +38,5 @@ module.exports = class AnswerResult extends Base {
 	}
 
 }
+
+module.exports = AnswerResult;

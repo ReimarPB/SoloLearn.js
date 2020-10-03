@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents a third-party account a user has connected to (e.g. StackOverflow)
  */
-module.exports = class ConnectedAccount extends Base {
+class ConnectedAccount extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -50,3 +50,5 @@ module.exports = class ConnectedAccount extends Base {
 	}
 
 }
+
+module.exports = ConnectedAccount;

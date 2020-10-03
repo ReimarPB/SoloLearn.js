@@ -6,7 +6,7 @@ const error = require("../error");
 /**
  * Represents a SoloLearn code
  */
-module.exports = class Code extends Base {
+class Code extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -170,7 +170,7 @@ module.exports = class Code extends Base {
 	}
 
 	/*getUser() {
-		
+
 	}*/
 
 	/**
@@ -195,3 +195,5 @@ module.exports = class Code extends Base {
 	}
 
 }
+
+module.exports = Code;

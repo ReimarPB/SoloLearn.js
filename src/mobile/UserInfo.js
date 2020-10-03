@@ -7,20 +7,20 @@ const User = require("./User");
  * @class
  * @public
  */
-module.exports = class UserInfo extends User {
+class UserInfo extends User {
 
 	constructor(client, data) {
 
 		super(...arguments);
 
 		const ConnectedAccount = require("./ConnectedAccount");
-		
+
 		/**
 		 * The link to the user's profile picture if they have any
 		 * @type {?string}
 		 */
 		this.avatarUrl = data.avatarUrl;
-		
+
 		/**
 		 * The user's profile summary if set
 		 * @type {?string}
@@ -78,3 +78,5 @@ module.exports = class UserInfo extends User {
 	}
 
 }
+
+module.exports = UserInfo;

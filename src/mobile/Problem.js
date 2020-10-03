@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * A code coach problem
  */
-module.exports = class Problem extends Base {
+class Problem extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -94,3 +94,5 @@ module.exports = class Problem extends Base {
 	// TODO add solving
 
 }
+
+module.exports = Problem;

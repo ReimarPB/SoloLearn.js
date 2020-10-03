@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents the streak notification that shows up when you open SoloLearn
  */
-module.exports = class StreakStatus extends Base {
+class StreakStatus extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -43,3 +43,5 @@ module.exports = class StreakStatus extends Base {
 	}
 
 }
+
+module.exports = StreakStatus;

@@ -5,7 +5,7 @@ const Base = require("../Base");
 /**
  * Represents a SoloLearn lesson
  */
-module.exports = class Lesson extends Base {
+class Lesson extends Base {
 
 	constructor(client, data) {
 		super(...arguments);
@@ -175,3 +175,5 @@ module.exports = class Lesson extends Base {
 	}
 
 }
+
+module.exports = Lesson;
