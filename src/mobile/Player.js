@@ -30,7 +30,7 @@ class Player extends User {
 
 		/**
 		 * Unknown value - always empty array?
-		 * @type {*[]}
+		 * @type {*}
 		 */
 		this.results = data.results;
 

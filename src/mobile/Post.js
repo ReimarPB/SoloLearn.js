@@ -85,7 +85,7 @@ class Post extends Base {
 
 	/**
 	 * Delete the post
-	 * @returns {Promise<>}
+	 * @returns {Promise<void>}
 	 */
 	delete() {
 		return new Promise(async (resolve, reject) => {

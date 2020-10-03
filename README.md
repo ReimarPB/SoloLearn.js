@@ -1,5 +1,8 @@
 # SoloLearn.js
+
 SoloLearn.js is a node.js library for interacting with SoloLearn's mobile API
+
+[Read the documentation](https://reimarpb.github.io/SoloLearn.js)
 
 ### This project is still a WIP
 
