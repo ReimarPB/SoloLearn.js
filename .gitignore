@@ -1,3 +1,5 @@
 node_modules/
 .idea/
-/index.js
+
+# I'm using this file to test the library
+test.js
